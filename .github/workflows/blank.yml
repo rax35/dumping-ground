@@ -16,7 +16,7 @@ jobs:
     container:
       image: termux/termux-docker:aarch64
       volumes: 
-        - /tmp/node20:/__e/node20
+        - /tmp/node20:/__e/node24
       options: --privileged
 
     
@@ -61,7 +61,7 @@ jobs:
       - name: install bionic-libc nodejs to force compatibility with actions/checkout and actions/upload-artifact
         run: |
           /entrypoint.sh pkg install -y nodejs-lts
-          ln -sf ${PREFIX}/bin /__e/node20/bin
+          ln -sf ${PREFIX}/bin /__e/node24/bin
       - uses: actions/checkout@v4.2.2
       - name: fix permissions of repository after actions/checkout, which ran as root user, while entrypoint.sh activates system user (1000)
         run: chown -R 1000:1000 .
