@@ -76,7 +76,7 @@ jobs:
           git clone https://github.com/mattwparas/helix/
           cd helix
           git checkout steel-event-system
-          cargo xtask stell
+          cargo xtask steel
       - uses: actions/upload-artifact@v4.6.0
         with:
           name: artifact-${{ matrix.architecture }}
